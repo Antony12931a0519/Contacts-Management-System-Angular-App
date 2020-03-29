@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <div class="container">
+        <p align="right">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addcontactmodal"><i
+                    class="fa fa-plus-circle" aria-hidden="true"></i> Add
+                Contact</button>
+        </p>
+        <h2>Contacts List</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
+                    <td>9492630159</td>
+                    <td>
+                        <i class="fa fa-edit" data-toggle="modal" data-target="#editmodal">Edit</i>&nbsp;
+                        <i class="fas fa-trash" data-toggle="modal" data-target="#deletemodal">Delete</i>&nbsp;
+                        <i class="fas fa-eye" data-toggle="modal" data-target="#viewmodal">View</i>&nbsp;
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+
+<!-- Edit  Modal -->
+<div class="modal fade" id="editmodal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Edit Contact Details</h4>
+            </div>
+           
+
+
+            <form>
+                <div class="form-group">
+                    <label for="firstname">FirstName:</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Enter FirstName" name="firstname">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">LastName:</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Enter LastName" name="lastname">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile:</label>
+                    <input type="text" class="form-control" id="mobile" placeholder="Enter mobile number" name="mobile">
+                </div>
+                
+
+            </form>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Edit Contact</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- View  Modal -->
+<div class="modal fade" id="viewmodal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Contact Details</h4>
+            </div>
+
+
+           
+            <form>
+                <div class="form-group">
+                    <label for="firstname">FirstName:</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Enter FirstName" name="firstname">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">LastName:</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Enter LastName" name="lastname">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile:</label>
+                    <input type="text" class="form-control" id="mobile" placeholder="Enter mobile number" name="mobile">
+                </div>
+                
+
+            </form>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Delete  Modal -->
+<div class="modal fade" id="deletemodal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are</p> you sure you want to delete the contact?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Delete Contact</button>
+                <button type="button" class="btn btn-su" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- add contact  Modal -->
+<div class="modal fade" id="addcontactmodal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Contact Details</h4>
+            </div>
+
+
+
+
+            <form>
+                <div class="form-group">
+                    <label for="firstname">FirstName:</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Enter FirstName" name="firstname">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">LastName:</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Enter LastName" name="lastname">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile:</label>
+                    <input type="text" class="form-control" id="mobile" placeholder="Enter mobile number" name="mobile">
+                </div>
+                
+
+            </form>
+
+
+
+
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Add Contact</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
