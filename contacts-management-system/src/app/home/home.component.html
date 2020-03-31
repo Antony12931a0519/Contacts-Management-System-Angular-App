@@ -21,11 +21,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                    <td>9492630159</td>
+                <tr *ngFor="let contact of contacts">
+                    <td>{{contact.firstName}}</td>
+                    <td>{{contact.lastName}}</td>
+                    <td>{{contact.email}}</td>
+                    <td>{{contact.mobile}}</td>
                     <td>
                         <i class="fa fa-edit" data-toggle="modal" data-target="#editmodal">Edit</i>&nbsp;
                         <i class="fas fa-trash" data-toggle="modal" data-target="#deletemodal">Delete</i>&nbsp;
@@ -49,13 +49,14 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Edit Contact Details</h4>
             </div>
-           
+
 
 
             <form>
                 <div class="form-group">
                     <label for="firstname">FirstName:</label>
-                    <input type="text" class="form-control" id="firstname" placeholder="Enter FirstName" name="firstname">
+                    <input type="text" class="form-control" id="firstname" placeholder="Enter FirstName"
+                        name="firstname">
                 </div>
                 <div class="form-group">
                     <label for="lastname">LastName:</label>
@@ -69,7 +70,7 @@
                     <label for="mobile">Mobile:</label>
                     <input type="text" class="form-control" id="mobile" placeholder="Enter mobile number" name="mobile">
                 </div>
-                
+
 
             </form>
 
@@ -96,11 +97,12 @@
             </div>
 
 
-           
+
             <form>
                 <div class="form-group">
                     <label for="firstname">FirstName:</label>
-                    <input type="text" class="form-control" id="firstname" placeholder="Enter FirstName" name="firstname">
+                    <input type="text" class="form-control" id="firstname" placeholder="Enter FirstName"
+                        name="firstname">
                 </div>
                 <div class="form-group">
                     <label for="lastname">LastName:</label>
@@ -114,7 +116,7 @@
                     <label for="mobile">Mobile:</label>
                     <input type="text" class="form-control" id="mobile" placeholder="Enter mobile number" name="mobile">
                 </div>
-                
+
 
             </form>
 
@@ -169,7 +171,8 @@
             <form>
                 <div class="form-group">
                     <label for="firstname">FirstName:</label>
-                    <input type="text" class="form-control" id="firstname" placeholder="Enter FirstName" name="firstname">
+                    <input type="text" class="form-control" id="firstname" placeholder="Enter FirstName"
+                        name="firstname">
                 </div>
                 <div class="form-group">
                     <label for="lastname">LastName:</label>
@@ -183,7 +186,7 @@
                     <label for="mobile">Mobile:</label>
                     <input type="text" class="form-control" id="mobile" placeholder="Enter mobile number" name="mobile">
                 </div>
-                
+
 
             </form>
 

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  contacts: any;
+
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+    this.getContactsList();
   }
+
+  getContactsList() {
+    this.httpClient.get(environment.baseUrl + 'contacts/list').subscribe(data => {     
+      this.contacts = data
+    })
+  }
+
+
 
 }
