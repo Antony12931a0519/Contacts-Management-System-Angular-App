@@ -10,6 +10,10 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 
 @NgModule({
   declarations: [
@@ -19,11 +23,12 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     AboutusComponent,
     ContactusComponent,
-    ErrorpageComponent
+    ErrorpageComponent,
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule
+    AppRoutingModule,HttpClientModule,FormsModule,Ng2SearchPipeModule
     
   ],
   providers: [],
