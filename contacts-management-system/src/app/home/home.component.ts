@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
   getContactsList() {
     this.httpClient.get(environment.baseUrl + 'contacts/list').subscribe(data => {
       this.contacts = data
+      console.log(this.contacts);
     })
   }
 
