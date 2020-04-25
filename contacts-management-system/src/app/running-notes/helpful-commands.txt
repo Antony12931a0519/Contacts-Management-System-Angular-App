@@ -1,3 +1,18 @@
 command to generate guards in specific folder 
 
 ng g guard authentication/auth
+
+implementing auth guard for restricting the unwanted pages to the users before login.
+
+please find the info for AuthGuard configuration from the below url.
+
+https://modev.net/angular-6-implement-auth-guard-to-your-project/?unapproved=35640&moderation-hash=f4d0edac69110b061eeb4dac103292b5#comment-35640
+
+for pagination follow the below instructions
+
+https://www.npmjs.com/package/ngx-pagination
+
+for toaster configuration folow the below instructions from the url
+
+https://www.npmjs.com/package/ngx-toastr
+

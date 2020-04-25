@@ -13,8 +13,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { LoginComponent } from './login/login.component';
+import {  HTTP_INTERCEPTORS } from '@angular/common/http';
 import {ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './authentication/auth.guard';
+import { BasicAuthHttpInterceptorService } from './authentication/basic-auth-http-interceptor.service';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -31,11 +36,19 @@ import { AuthGuard } from './authentication/auth.guard';
    
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,HttpClientModule,FormsModule,Ng2SearchPipeModule,ReactiveFormsModule
+    BrowserModule,AppRoutingModule,HttpClientModule,FormsModule,Ng2SearchPipeModule,ReactiveFormsModule,NgxPaginationModule,
+     BrowserAnimationsModule, ToastrModule.forRoot({
+      timeOut:2000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+    })
      
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard,
+    {  
+      provide:HTTP_INTERCEPTORS, useClass:BasicAuthHttpInterceptorService, multi:true 
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
