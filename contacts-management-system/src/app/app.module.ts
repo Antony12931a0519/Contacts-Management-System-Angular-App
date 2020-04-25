@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { LoginComponent } from './login/login.component';
+import {ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -30,7 +31,7 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule,FormsModule,Ng2SearchPipeModule
+    AppRoutingModule,HttpClientModule,FormsModule,Ng2SearchPipeModule,ReactiveFormsModule
      
   ],
   providers: [],

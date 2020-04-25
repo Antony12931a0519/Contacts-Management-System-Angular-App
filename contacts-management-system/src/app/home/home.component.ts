@@ -24,8 +24,18 @@ export class HomeComponent implements OnInit {
 
   constructor(private httpClient: HttpClient) { }
 
+  user:any;
+  isLoggedIn:any;
+
+
   ngOnInit(): void {
     this.getContactsList();
+    this.user= localStorage.getItem("user");
+    if(this.user != null){
+     this.isLoggedIn=true;
+    }else{
+      this.isLoggedIn=false;
+    }
   }
 
   getContactsList() {
