@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { LoginComponent } from './login/login.component';
 import {ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from './authentication/auth.guard';
 
 
 
@@ -34,7 +35,7 @@ import {ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,HttpClientModule,FormsModule,Ng2SearchPipeModule,ReactiveFormsModule
      
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

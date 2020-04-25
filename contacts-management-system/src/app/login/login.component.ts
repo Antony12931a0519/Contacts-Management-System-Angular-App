@@ -45,8 +45,11 @@ export class LoginComponent implements OnInit {
       }
 
       this.router.navigate(['/home']);
-    } else
-      this.router.navigate(['/']);
+    } else{
+      alert("Invalid user name and password")
+      this.router.navigate(['/login']);
+    }
+     
   }
 
 
