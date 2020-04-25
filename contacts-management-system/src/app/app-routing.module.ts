@@ -4,14 +4,17 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './authentication/auth.guard';
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'aboutus', component: AboutusComponent },
-  { path: 'contactus', component: ContactusComponent },
-  { path: '**', component: ErrorpageComponent },
-  // { path: '/',pathMatch:'true', component: HomeComponent }
+  { path: '', redirectTo:'/login',pathMatch :'full' },
+  { path: 'home', component: HomeComponent ,canActivate: [AuthGuard]},
+  { path: 'aboutus', component: AboutusComponent,canActivate: [AuthGuard] },
+  { path: 'contactus', component: ContactusComponent,canActivate: [AuthGuard] },  
+  { path: 'login', component: LoginComponent },
+  { path: '**', component: ErrorpageComponent }
 
 ];
 

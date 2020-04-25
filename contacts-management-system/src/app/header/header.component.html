@@ -3,17 +3,21 @@
 
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
+<nav class="navbar navbar-inverse" >
+  <div class="container-fluid"  >
+    <div>
+    <div class="navbar-header" >
       <a class="navbar-brand" routerLink="/home">Contacts Management System</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a routerLink="/home">Home</a></li>
       <!-- <li><a routerLink="/home">Home</a></li> -->
       <li><a routerLink="/contactus">ContactUs</a></li>
-      <li><a routerLink="/aboutus">AboutUs</a></li>
+      <li><a routerLink="/aboutus">AboutUs</a></li>      
     </ul>
+  <div  *ngIf="isLoggedIn"><li style="float: right; font-size: 25px;"><a (click)="logout()" >Logout</a></li></div>
+  <div  *ngShow="isLoggedIn"><li style="float: right; font-size: 25px;"><a (click)="logout()" >login</a></li></div>
+  </div>
   </div>
 </nav>
   

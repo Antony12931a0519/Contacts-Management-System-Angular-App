@@ -9,6 +9,14 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { LoginComponent } from './login/login.component';
+import {ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from './authentication/auth.guard';
+
+
 
 @NgModule({
   declarations: [
@@ -18,13 +26,16 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
     FooterComponent,
     AboutusComponent,
     ContactusComponent,
-    ErrorpageComponent
+    ErrorpageComponent,
+    LoginComponent,
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,HttpClientModule,FormsModule,Ng2SearchPipeModule,ReactiveFormsModule
+     
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
