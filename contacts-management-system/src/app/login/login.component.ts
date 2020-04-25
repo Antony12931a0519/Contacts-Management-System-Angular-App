@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -30,12 +31,16 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private httpClient: HttpClient, private router: Router) {
+  constructor(private httpClient: HttpClient, private router: Router,private toastr: ToastrService) {
     this.httpClient = httpClient;
 
   }
 
   login(user: User) {
+    if(user.username!="user" || user.password!="password"){
+      this.toastr.error("Please enter the valid username and password!");
+    }
+    
     if (user.username == "user" && user.password == "password") {
       localStorage.setItem("user", user.username);
       if (localStorage.getItem("user") != null) {
@@ -46,12 +51,7 @@ export class LoginComponent implements OnInit {
 
       this.router.navigate(['/home']);
     } else{
-      alert("Invalid user name and password")
       this.router.navigate(['/login']);
-    }
-     
+    }     
   }
-
-
-
 }
