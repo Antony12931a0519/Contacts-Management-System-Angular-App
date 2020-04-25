@@ -29,13 +29,24 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getContactsList();
+    this.refreshContacts();
     this.user= localStorage.getItem("user");
     if(this.user != null){
      this.isLoggedIn=true;
     }else{
       this.isLoggedIn=false;
     }
+  }
+
+  refreshContacts() {
+      
+    console.log("Refreshing the contacts");
+    setTimeout (() => {
+        this.getContactsList();
+      }, 1000);
+ 
+    console.log("Contacts Refreshed.");
+ 
   }
 
   getContactsList() {
