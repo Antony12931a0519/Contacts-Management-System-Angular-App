@@ -11,9 +11,11 @@ export class BasicAuthHttpInterceptorService implements HttpInterceptor {
   constructor() { }
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     if (req != undefined) {
+
       req = req.clone({
-        setHeaders: {          
-          Authorization: 'Basic ' +btoa(environment.userName + ':' + environment.password)
+        setHeaders: {     
+               
+          Authorization: 'Basic '+btoa(environment.userName + ':' + environment.password)
         }
       })
     }

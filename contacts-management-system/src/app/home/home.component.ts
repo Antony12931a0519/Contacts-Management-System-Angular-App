@@ -59,11 +59,24 @@ export class HomeComponent implements OnInit {
 
     this.toastr.success("Contacts Fetched successfully");
 
+    // const httpHeader= {
+    //   headers: {
+    //     "Access-Control-Allow-Origin":  "localhost:1231",
+		// "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+		// "Access-Control-Allow-Headers": "X-Requested-With,content-type",
+    // // "Access-Control-Expose-Headers": "xsrf-token",
+    // // "Access-Control-Allow-Credentials": true,
+    //     'Authorization': 'authdata ' +btoa(environment.userName + ':' + environment.password)
+    //   }
+    // }
+
     this.httpClient.get(environment.baseUrl + 'contacts/list').subscribe(data => {
 
       this.contacts = data
 
     })
+
+    // this.httpClient.get("").toPromise();
   }
 
   addContacts(contact: Contacts) {
