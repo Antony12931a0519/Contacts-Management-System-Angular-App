@@ -19,10 +19,10 @@ import { AuthGuard } from './authentication/auth.guard';
 import { BasicAuthHttpInterceptorService } from './authentication/basic-auth-http-interceptor.service';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule,ToastrConfig } from 'ngx-toastr';
 
 
-
+``
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,13 +32,13 @@ import { ToastrModule } from 'ngx-toastr';
     AboutusComponent,
     ContactusComponent,
     ErrorpageComponent,
-    LoginComponent,
+    LoginComponent
    
   ],
   imports: [
     BrowserModule,AppRoutingModule,HttpClientModule,FormsModule,Ng2SearchPipeModule,ReactiveFormsModule,NgxPaginationModule,
      BrowserAnimationsModule, ToastrModule.forRoot({
-      timeOut:2000,
+      timeOut:5000,
       positionClass: 'toast-top-center',
       preventDuplicates: true,
     })
