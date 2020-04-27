@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit {
 
   contacts: any;
   input: any = '';
-  regex:'/^[a-zA-Z ]{2,30}$/';
+  error: any;
+  regex: '/^[a-zA-Z ]{2,30}$/';
   contactRegistrationStatus: any;
   contact: Contacts = {
     contactId: 0,
@@ -25,7 +26,7 @@ export class HomeComponent implements OnInit {
     mobile: ''
   }
 
-  constructor(private httpClient: HttpClient,private toastr: ToastrService) { }
+  constructor(private httpClient: HttpClient, private toastr: ToastrService) { }
 
   user: any;
   isLoggedIn: any;
@@ -56,37 +57,26 @@ export class HomeComponent implements OnInit {
   }
 
   getContactsList() {
-
-    this.toastr.success("Contacts Fetched successfully");
-
-    // const httpHeader= {
-    //   headers: {
-    //     "Access-Control-Allow-Origin":  "localhost:1231",
-		// "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-		// "Access-Control-Allow-Headers": "X-Requested-With,content-type",
-    // // "Access-Control-Expose-Headers": "xsrf-token",
-    // // "Access-Control-Allow-Credentials": true,
-    //     'Authorization': 'authdata ' +btoa(environment.userName + ':' + environment.password)
-    //   }
-    // }
-
     this.httpClient.get(environment.baseUrl + 'contacts/list').subscribe(data => {
 
-      this.contacts = data
+      this.contacts = data,
+        error => this.error = error
 
     })
+    
+      this.toastr.success("Contacts Fetched successfully");
+    
 
-    // this.httpClient.get("").toPromise();
   }
 
   addContacts(contact: Contacts) {
 
-    
+
     this.httpClient.post(environment.baseUrl + 'contacts/details/add', this.contact).subscribe(data => {
       this.contactRegistrationStatus = data.toLocaleString;
       console.log(this.contactRegistrationStatus)
     })
-    if(this.contactRegistrationStatus != null){
+    if (this.contactRegistrationStatus != null) {
       this.toastr.success("Contacts Details Added Successfully");
     }
     this.getContactsList();
